@@ -1,0 +1,39 @@
+ List<szamokcs> szamok_lista = new List<szamokcs>();
+            string[] sorok = File.ReadAllLines(@"D:\1. Feladat\nyeremenyek.txt");
+            foreach (var item in sorok)
+            {
+                string[] szam = item.Split(';');
+                List<int> ertekek = new List<int>();
+                szamokcs szam_betolto = new szamokcs(szam[0], szam[1], szam[2], szam[3], szam[4]);
+                szamok_lista.Add(szam_betolto);
+
+
+                
+
+
+            }
+
+
+
+////////////////////////////////////////////////////////
+
+
+
+ internal class szamokcs
+    {
+        
+            public int sorSzam;
+            public string userName;
+            public int tet;
+            public int szorzo;
+            public string nyertes;
+
+        public szamokcs(string sorSzam, string userName, string tet, string szorzo, string nyertes)
+        {
+            this.sorSzam = int.Parse(sorSzam);
+            this.userName = userName;
+            this.tet = int.Parse(tet);
+            this.szorzo = int.Parse(szorzo);
+            this.nyertes = nyertes;
+        }
+    }
